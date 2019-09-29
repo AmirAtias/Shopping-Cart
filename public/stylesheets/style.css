@@ -1,0 +1,31 @@
+html,body { 
+  background: url("https://www.templatemonster.com/bwp-content/uploads/2017/06/books.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.card.card-body{
+  width: 100%;
+}
+
+.card img{
+height: 150px;
+}
+
+
+.card .card-body .card-text{
+   color: blue;
+   height: 100px;
+   margin: 2px;
+
+}
+
+.card .card-body .price{
+  font-weight: bold;
+  font-size: 20px;
+  margin: 2px;
+
+}
+

@@ -1,0 +1,40 @@
+{{#if products}}
+    <div class="row mt-3 ">
+    <div class="col-sm-6 col-md-6 offset-md-3 offset-sm-3">
+        <ul class="list-group list-group-flush">
+            {{#each products}}
+            <li class="list-group-item list-group-item-light "style=" font-weight: bold; font-size: 22px;" >
+                <span class="float-right badge badge-secondary mr-3">{{this.qty}}</span>
+                <strong class=" mr-1 " style=" font-weight: bold; font-size: 22px;">{{this.item.title}}</strong>
+                <span class="badge badge-success  mr-3" style=" font-weight: bold; font-size: 22px;">${{this.price}}</span>
+                <div class=" btn-group  "style="display: flex; justify-content: left;">
+                        <a class="btn btn-warning btn-sm  mr-3 mt-2" style=" font-weight: bold; font-size: 22px;" href="/reduce/{{this.item._id}}" role="button">Reduce by 1</a>
+                        <a class="btn btn-danger btn-sm  mr-3 mt-2" style=" font-weight: bold; font-size: 22px;" href="/remove/{{this.item._id}}" role="button">Remove All</a>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<div class="row mt-3 "  style=" font-weight: bold; font-size: 22px;">
+    <div class="col-sm-6 col-md-6 offset-md-3 offset-sm-3">
+        <strong>Total: {{totalPrice}}$</strong>
+    </div>
+</div>
+<hr>
+<div class="row mt-3 " >
+    <div class="col-sm-6 col-md-6 offset-md-3 offset-sm-3">
+        <a class="btn btn-success btn-sm  mr-3 mt-2"style=" font-weight: bold; font-size: 22px;" href="/checkout" role="button">Checkout</a>
+
+     
+    </div>
+</div>
+{{else}}
+    <div class="row mt-6" style=" font-weight: bold; text-align: center;    margin-top: 200px; ">
+    <div class="col-sm-6 col-md-6 offset-md-3 offset-sm-3">
+      <h2>No items in Cart</h2>
+    </div>
+</div>
+{{/if}}
+
+

@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <h1 style="font-weight: bold; color: rgb(13, 0, 128);">Checkout</h1>
+        <h4 style="font-weight: bold; font-size: 22px; color: rgb(13, 0, 128);">Your Total: ${{total}}</h4>
+        <div id="charge-error" class="{{#if noError}}d-none{{/if}}  alert alert-danger ">
+                    {{errMsg}}
+        </div>
+        <form action="/checkout" method="post" id="checkout-form" style="color: rgb(13, 0, 128); font-weight: bold; font-size: 18px;">
+            <div class="row mt-3 ">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="name"><strong>Name</strong></label>
+                        <input type="text" id="name" class="form-control" required name="name">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="address"><strong>Address</strong></label>
+                        <input type="text" id="address" class="form-control" required name="address">
+                    </div>
+                </div>
+                <hr>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="card-name"><strong>Card Holder Name</strong></label>
+                        <input type="text" id="card-name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="card-number"><strong> Credit Card Number</strong></label>
+                        <input type="text" id="card-number" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="mr-2 col-sm-5 ">
+                            <div class="form-group">
+                                <label for="card-expiry-month"><strong>Expiration Month</strong></label>
+                                <input type="text" id="card-expiry-month" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class=" ml-2 col-sm-5">
+                            <div class="form-group">
+                                <label for="card-expiry-year"><strong>Expiration Year</strong></label>
+                                <input type="text" id="card-expiry-year" class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="card-cvc"><strong>CVC</strong></label>
+                        <input type="text" id="card-cvc" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success mt-3">Buy now</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="javascripts/checkout.js"></script>
