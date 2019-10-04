@@ -30,7 +30,7 @@ C:\Program Files\MongoDB\Server\4.2\bin\mongod.exe
 ```
 Update your local database server:
 ```
-node ./seed/product-seeder.js
+node ./seed/productSeeder.js
 ```
 start Node:
 ```
